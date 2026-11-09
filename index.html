@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Kenzie 🌸 The Sweetest Angel in the Whole Universe</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for ultra-cute bubbly & elegant typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            fredoka: ['Fredoka', 'sans-serif'],
+            quicksand: ['Quicksand', 'sans-serif'],
+            script: ['Sacramento', 'cursive'],
+          },
+          colors: {
+            candyPink: '#FFB7D5',
+            softRose: '#FFE4E9',
+            lavenderCloud: '#E8DEFF',
+            creamButter: '#FFF9EB',
+            peachBlush: '#FFD6BA',
+            mintySweet: '#D8F3DC',
+            bubbleGum: '#FF6EA7',
+            deepBerry: '#9E2A5C',
+          },
+          animation: {
+            'float-slow': 'float 6s ease-in-out infinite',
+            'float-mid': 'float 4s ease-in-out infinite',
+            'float-fast': 'float 3s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 2.5s infinite',
+            'wiggle': 'wiggle 1.2s ease-in-out infinite',
+            'spin-slow': 'spin 12s linear infinite',
+            'bounce-soft': 'bounceSoft 2s infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-14px) rotate(2deg)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 15px rgba(255, 110, 167, 0.4)' },
+              '50%': { boxShadow: '0 0 35px rgba(255, 110, 167, 0.85), 0 0 50px rgba(232, 222, 255, 0.6)' },
+            },
+            wiggle: {
+              '0%, 100%': { transform: 'rotate(-4deg)' },
+              '50%': { transform: 'rotate(4deg)' },
+            },
+            bounceSoft: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-8px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Cute custom scrollbars */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FFF0F5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #FFB7D5;
+      border-radius: 999px;
+      border: 2px solid #FFF0F5;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FF6EA7;
+    }
+
+    /* Sparkle cursor trail particles */
+    .sparkle-dot {
+      pointer-events: none;
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff, #ff6ea7);
+      box-shadow: 0 0 8px #ff6ea7;
+      animation: sparkleFade 0.7s forwards;
+      z-index: 9999;
+    }
+    @keyframes sparkleFade {
+      0% { transform: scale(1) translate(0, 0); opacity: 1; }
+      100% { transform: scale(0.1) translate(var(--tx, 0), var(--ty, -20px)); opacity: 0; }
+    }
+
+    /* Soft cloudy background styling */
+    body {
+      background: linear-gradient(135deg, #fff0f6 0%, #fae8ff 35%, #fff5eb 70%, #fdf2f8 100%);
+      background-attachment: fixed;
+      font-family: 'Quicksand', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 2px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 10px 30px rgba(255, 182, 193, 0.25);
+    }
+
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .glass-card-hover:hover {
+      transform: translateY(-6px) scale(1.015);
+      box-shadow: 0 18px 35px rgba(255, 110, 167, 0.3);
+      border-color: rgba(255, 183, 213, 0.9);
+    }
+
+    .shimmer-text {
+      background: linear-gradient(90deg, #ff6ea7 0%, #b252ee 40%, #ff8fa3 70%, #ff6ea7 100%);
+      background-size: 200% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+    @keyframes shimmer {
+      to { background-position: 200% center; }
+    }
+  </style>
+</head>
+<body class="text-pink-900 selection:bg-pink-300 selection:text-pink-900 relative min-h-screen">
+
+  <!-- Interactive Floating Background Background Elements -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10 select-none">
+    <div class="absolute top-10 left-8 text-4xl animate-float-slow opacity-60">🎀</div>
+    <div class="absolute top-36 right-16 text-5xl animate-float-mid opacity-70">🍓</div>
+    <div class="absolute top-1/3 left-6 text-3xl animate-wiggle opacity-60">✨</div>
+    <div class="absolute top-1/2 right-10 text-4xl animate-float-slow opacity-50">🧁</div>
+    <div class="absolute bottom-40 left-16 text-5xl animate-float-fast opacity-65">🌸</div>
+    <div class="absolute bottom-20 right-20 text-4xl animate-wiggle opacity-60">🧸</div>
+    <div class="absolute top-2/3 right-1/4 text-3xl animate-float-mid opacity-40">💖</div>
+    <div class="absolute top-1/4 left-1/3 text-4xl animate-spin-slow opacity-35">⭐</div>
+  </div>
+
+  <!-- Audio Chimes & Audio Player Bar -->
+  <div class="sticky top-3 z-50 max-w-4xl mx-auto px-4">
+    <div class="glass-card rounded-full py-2.5 px-6 flex items-center justify-between border-2 border-pink-200/80 shadow-md">
+      <div class="flex items-center gap-2">
+        <span class="inline-block p-1.5 bg-pink-100 rounded-full text-pink-500 animate-wiggle">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+        </span>
+        <span class="font-fredoka font-semibold text-xs md:text-sm text-pink-700 tracking-wide">
+          Kenzie's Sweet World 🎀
+        </span>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="flex items-center gap-2 md:gap-3">
+        <!-- Chime Player toggle -->
+        <button id="soundToggleBtn" onclick="toggleCuteMusic()" class="flex items-center gap-1.5 px-3 py-1.5 bg-pink-100 hover:bg-pink-200 text-pink-700 rounded-full text-xs font-semibold transition-all">
+          <i data-lucide="music" id="musicIcon" class="w-3.5 h-3.5"></i>
+          <span id="musicBtnLabel">Play Lullaby</span>
+        </button>
+
+        <!-- Sweet Sparkle Shower -->
+        <button onclick="burstHearts(event)" class="flex items-center gap-1.5 px-3.5 py-1.5 bg-gradient-to-r from-pink-400 to-rose-400 hover:from-pink-500 hover:to-rose-500 text-white rounded-full text-xs font-bold shadow-sm transition-all transform active:scale-95">
+          <i data-lucide="heart" class="w-3.5 h-3.5 fill-white"></i>
+          <span>Love Burst!</span>
+        </button>
+
+        <!-- Random Sweet Reason Modal Trigger -->
+        <button onclick="openRandomParagraph()" class="flex items-center gap-1.5 px-3 py-1.5 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-full text-xs font-semibold transition-all">
+          <i data-lucide="gift" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">Daily Love Letter</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Header Section -->
+  <header class="relative pt-12 pb-16 px-4 max-w-5xl mx-auto text-center flex flex-col items-center">
+    <!-- Cute Header Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-pink-200/70 border border-pink-300 rounded-full mb-6 animate-bounce-soft shadow-inner">
+      <span class="text-sm">🌸 Official Tribute to the World's Sweetest Human 🌸</span>
+    </div>
+
+    <!-- Main Title -->
+    <h1 class="font-fredoka font-bold text-4xl sm:text-6xl md:text-7xl leading-tight mb-4 tracking-tight">
+      For <span class="shimmer-text underline decoration-pink-300 decoration-wavy decoration-2">Kenzie</span>,
+      <br>
+      <span class="text-3xl sm:text-5xl md:text-6xl text-pink-800 font-extrabold">The Sweetest Soul Alive! 💖</span>
+    </h1>
+
+    <p class="font-quicksand font-medium text-lg sm:text-xl text-pink-800/90 max-w-2xl mx-auto leading-relaxed mt-2">
+      You are pure sunshine, gentle warm hugs, morning dew on baby blossoms, and all the coziest, sweetest miracles in existence. Here are <span class="font-bold text-pink-600 bg-pink-100 px-2 py-0.5 rounded-md">100 reasons</span> why everyone adores you so deeply!
+    </p>
+
+    <!-- Floating Cute Mascot Stickers / Mood Bar -->
+    <div class="flex flex-wrap justify-center items-center gap-4 mt-8">
+      <div class="glass-card px-4 py-2 rounded-2xl flex items-center gap-2 border border-pink-200">
+        <span class="text-2xl">🍰</span>
+        <div class="text-left">
+          <div class="text-[10px] text-pink-500 font-bold uppercase tracking-wider">Flavour Profile</div>
+          <div class="text-xs font-bold text-pink-800">100% Cotton Candy & Honey</div>
+        </div>
+      </div>
+
+      <div class="glass-card px-4 py-2 rounded-2xl flex items-center gap-2 border border-purple-200">
+        <span class="text-2xl">🧸</span>
+        <div class="text-left">
+          <div class="text-[10px] text-purple-500 font-bold uppercase tracking-wider">Huggability</div>
+          <div class="text-xs font-bold text-purple-800">Beyond Maximum Rating</div>
+        </div>
+      </div>
+
+      <div class="glass-card px-4 py-2 rounded-2xl flex items-center gap-2 border border-rose-200">
+        <span class="text-2xl">🌟</span>
+        <div class="text-left">
+          <div class="text-[10px] text-rose-500 font-bold uppercase tracking-wider">Aura</div>
+          <div class="text-xs font-bold text-rose-800">Gleaming Rose Gold Sparkles</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Interactive Sweetmeter / Stats -->
+  <section class="max-w-5xl mx-auto px-4 mb-16">
+    <div class="glass-card rounded-3xl p-6 sm:p-8 border-2 border-pink-200 shadow-xl relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-pink-200/40 rounded-full blur-2xl pointer-events-none"></div>
+
+      <h2 class="font-fredoka font-bold text-2xl sm:text-3xl text-center text-pink-800 mb-6 flex items-center justify-center gap-2">
+        <span>✨ The Official Kenzie Sweet-O-Meter ✨</span>
+      </h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <!-- Stat 1 -->
+        <div class="p-4 bg-white/70 rounded-2xl border border-pink-100 hover:scale-105 transition-transform cursor-pointer" onclick="playChime(523.25); burstSparklesAt(event)">
+          <div class="text-3xl mb-1">🍯</div>
+          <div class="font-fredoka font-bold text-xl sm:text-2xl text-pink-600">Infinity %</div>
+          <div class="text-xs font-semibold text-pink-900/80">Sweetness Level</div>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="p-4 bg-white/70 rounded-2xl border border-pink-100 hover:scale-105 transition-transform cursor-pointer" onclick="playChime(659.25); burstSparklesAt(event)">
+          <div class="text-3xl mb-1">☀️</div>
+          <div class="font-fredoka font-bold text-xl sm:text-2xl text-yellow-500">1,000,000 Suns</div>
+          <div class="text-xs font-semibold text-pink-900/80">Smile Radiance</div>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="p-4 bg-white/70 rounded-2xl border border-pink-100 hover:scale-105 transition-transform cursor-pointer" onclick="playChime(783.99); burstSparklesAt(event)">
+          <div class="text-3xl mb-1">🍓</div>
+          <div class="font-fredoka font-bold text-xl sm:text-2xl text-red-500">Pure Love</div>
+          <div class="text-xs font-semibold text-pink-900/80">Heart Composition</div>
+        </div>
+
+        <!-- Stat 4 -->
+        <div class="p-4 bg-white/70 rounded-2xl border border-pink-100 hover:scale-105 transition-transform cursor-pointer" onclick="playChime(1046.50); burstSparklesAt(event)">
+          <div class="text-3xl mb-1">👑</div>
+          <div class="font-fredoka font-bold text-xl sm:text-2xl text-purple-600">Unmatched</div>
+          <div class="text-xs font-semibold text-pink-900/80">Preciousness Rank</div>
+        </div>
+      </div>
+
+      <!-- Live Compliment Generator Button -->
+      <div class="mt-8 text-center">
+        <button id="complimentBtn" onclick="generateCuteCompliment()" class="px-6 py-3 bg-gradient-to-r from-pink-400 via-rose-400 to-purple-400 text-white rounded-full font-fredoka font-semibold text-base shadow-md hover:shadow-lg hover:scale-105 transition-all flex items-center gap-2 mx-auto">
+          <span>💌 Why Kenzie Is So Precious Right Now?</span>
+          <i data-lucide="sparkle" class="w-4 h-4"></i>
+        </button>
+        <p id="complimentDisplay" class="mt-4 text-base font-medium text-pink-800 italic transition-all duration-300 min-h-[30px]">
+          "Click the button above to discover an instant reminder of why you are so adored, Kenzie!"
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Jar of Sweet Love Notes -->
+  <section class="max-w-4xl mx-auto px-4 mb-16">
+    <div class="glass-card rounded-3xl p-6 sm:p-8 border-2 border-purple-200 shadow-xl text-center flex flex-col md:flex-row items-center gap-8 justify-between">
+      <div class="flex-1 text-left">
+        <span class="inline-block px-3 py-1 bg-purple-100 text-purple-700 font-semibold text-xs rounded-full mb-3">
+          🍬 Sugar Jar of Kenzie
+        </span>
+        <h3 class="font-fredoka font-bold text-2xl sm:text-3xl text-purple-900 mb-2">
+          Pick a Heart from Kenzie's Candy Jar
+        </h3>
+        <p class="text-sm sm:text-base text-purple-800/80 mb-5 leading-relaxed">
+          Reach in anytime! Every little candy heart has a handwritten warm wish crafted just for sweet Kenzie.
+        </p>
+        <button onclick="pickCandyHeart()" class="px-5 py-2.5 bg-purple-500 hover:bg-purple-600 text-white font-fredoka font-semibold rounded-full shadow-md hover:shadow-lg transition flex items-center gap-2">
+          <span>Reach Into The Jar</span>
+          <i data-lucide="wand-2" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Animated Jar Graphics Container -->
+      <div class="relative w-48 h-56 bg-white/60 border-4 border-pink-300 rounded-b-[60px] rounded-t-[20px] flex items-center justify-center p-3 shadow-inner cursor-pointer hover:rotate-2 transition-transform" onclick="pickCandyHeart()">
+        <!-- Jar Lid -->
+        <div class="absolute -top-4 w-32 h-6 bg-pink-400 rounded-full border-2 border-white shadow"></div>
+        <div class="absolute -top-6 w-16 h-3 bg-pink-300 rounded-t-lg"></div>
+
+        <!-- Jar Ribbon -->
+        <div class="absolute top-2 w-full h-3 bg-rose-300/80"></div>
+        <div class="absolute top-1 text-xs">🎀</div>
+
+        <!-- Hearts inside jar -->
+        <div class="grid grid-cols-3 gap-2 text-2xl select-none animate-pulse">
+          <span>💖</span><span>🍓</span><span>🌸</span>
+          <span>🍬</span><span>✨</span><span>🧁</span>
+          <span>💕</span><span>🌷</span><span>🤍</span>
+        </div>
+
+        <div class="absolute bottom-2 text-[10px] font-fredoka font-bold text-pink-500 bg-white/80 px-2 py-0.5 rounded-full shadow-sm">
+          TAP TO OPEN ✨
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE MAIN 100 SWEET PARAGRAPHS VAULT -->
+  <section class="max-w-6xl mx-auto px-4 mb-20" id="love-vault">
+    <div class="text-center mb-8">
+      <span class="inline-block px-4 py-1.5 bg-pink-100 text-pink-700 font-bold text-xs rounded-full uppercase tracking-widest mb-2">
+        🌸 The Grand Love Collection 🌸
+      </span>
+      <h2 class="font-fredoka font-bold text-3xl sm:text-5xl text-pink-900 mb-3">
+        100 Sweet Paragraphs for Kenzie
+      </h2>
+      <p class="text-pink-700 max-w-2xl mx-auto font-medium text-sm sm:text-base">
+        One hundred dedicated, poetic, cute, and ultra-tender love paragraphs celebrating every single thing that makes Kenzie truly one in eight billion.
+      </p>
+    </div>
+
+    <!-- Filters, Search & View Controls -->
+    <div class="glass-card rounded-2xl p-4 sm:p-5 mb-8 flex flex-col md:flex-row items-center justify-between gap-4 border border-pink-200 shadow-md">
+      <!-- Search Input -->
+      <div class="relative w-full md:w-80">
+        <i data-lucide="search" class="w-4 h-4 text-pink-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+        <input 
+          type="text" 
+          id="paragraphSearch" 
+          onkeyup="filterParagraphs()" 
+          placeholder="Search by keywords (e.g. smile, hugs, laugh)..." 
+          class="w-full pl-10 pr-4 py-2 bg-white/90 border border-pink-200 rounded-full text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-pink-400 text-pink-900 placeholder-pink-300"
+        >
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex items-center gap-1.5 flex-wrap justify-center overflow-x-auto py-1 max-w-xl">
+        <button onclick="setFilter('all', this)" class="category-btn active px-3 py-1 bg-pink-500 text-white rounded-full text-xs font-semibold shadow-sm transition">All (100)</button>
+        <button onclick="setFilter('sweetness', this)" class="category-btn px-3 py-1 bg-white hover:bg-pink-100 text-pink-700 rounded-full text-xs font-semibold transition">#PureSweetness</button>
+        <button onclick="setFilter('beauty', this)" class="category-btn px-3 py-1 bg-white hover:bg-pink-100 text-pink-700 rounded-full text-xs font-semibold transition">#RadiantBeauty</button>
+        <button onclick="setFilter('cuteness', this)" class="category-btn px-3 py-1 bg-white hover:bg-pink-100 text-pink-700 rounded-full text-xs font-semibold transition">#CutenessOverload</button>
+        <button onclick="setFilter('comfort', this)" class="category-btn px-3 py-1 bg-white hover:bg-pink-100 text-pink-700 rounded-full text-xs font-semibold transition">#CozyComfort</button>
+      </div>
+
+      <!-- View Switcher -->
+      <div class="flex items-center bg-white/70 p-1 rounded-full border border-pink-200">
+        <button id="viewGridBtn" onclick="toggleView('grid')" class="p-1.5 rounded-full bg-pink-400 text-white transition" title="Card Grid View">
+          <i data-lucide="layout-grid" class="w-4 h-4"></i>
+        </button>
+        <button id="viewListBtn" onclick="toggleView('list')" class="p-1.5 rounded-full text-pink-600 hover:bg-pink-100 transition" title="Compact List View">
+          <i data-lucide="list" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Results Counter -->
+    <div class="text-right text-xs font-bold text-pink-600 mb-4 px-2" id="resultsCount">
+      Showing 100 of 100 sweet reasons
+    </div>
+
+    <!-- The 100 Paragraphs Container -->
+    <div id="paragraphsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Injected via JavaScript below -->
+    </div>
+  </section>
+
+  <!-- Interactive Sticker & Sweet Board -->
+  <section class="max-w-4xl mx-auto px-4 mb-20">
+    <div class="glass-card rounded-3xl p-6 sm:p-8 border-2 border-pink-200 text-center relative overflow-hidden">
+      <h3 class="font-fredoka font-bold text-2xl sm:text-3xl text-pink-900 mb-2">
+        🎀 Kenzie's Interactive Sticker Wall 🎀
+      </h3>
+      <p class="text-xs sm:text-sm text-pink-700 mb-6">
+        Click anywhere on the pastel canvas below to stamp sweet stickers & sparkly love hearts for Kenzie!
+      </p>
+
+      <div 
+        id="stickerBoard" 
+        onclick="stampSticker(event)" 
+        class="w-full h-72 sm:h-80 bg-white/80 rounded-2xl border-2 border-dashed border-pink-300 relative overflow-hidden cursor-crosshair select-none flex items-center justify-center shadow-inner"
+      >
+        <div id="emptyBoardPrompt" class="text-pink-300 font-fredoka text-sm sm:text-base pointer-events-none">
+          ✨ Tap or Click Anywhere Inside to Leave a Sweet Sticker for Kenzie! ✨
+        </div>
+      </div>
+
+      <div class="mt-4 flex justify-between items-center px-2">
+        <div class="text-xs text-pink-500 font-semibold" id="stickerCountText">Stickers stamped: 0</div>
+        <button onclick="clearStickers()" class="text-xs text-pink-600 hover:text-pink-800 underline font-medium">Clear Canvas</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sweet Cute Footer -->
+  <footer class="text-center py-12 px-4 border-t border-pink-200/60 bg-pink-100/40">
+    <div class="text-3xl mb-2 animate-bounce-soft">🧁 💖 🌸</div>
+    <div class="font-fredoka font-bold text-lg text-pink-800">
+      Made with infinite care, warmth, and cuteness for darling Kenzie
+    </div>
+    <p class="font-quicksand text-xs sm:text-sm text-pink-600/80 mt-1">
+      Always remember how cherished, beautiful, irreplaceable, and truly wonderful you are!
+    </p>
+    <div class="mt-4 text-[11px] text-pink-400 font-semibold">
+      Forever & Always • 100% Certified Sweetness • Every Single Day
+    </div>
+  </footer>
+
+  <!-- Modal: Single Sweet Paragraph Spotlight / Love Letter -->
+  <div id="spotlightModal" class="fixed inset-0 bg-pink-950/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="glass-card max-w-lg w-full rounded-3xl p-6 sm:p-8 border-4 border-pink-200 shadow-2xl relative transform transition-all animate-float-mid">
+      <!-- Close Button -->
+      <button onclick="closeSpotlightModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-700 flex items-center justify-center text-sm font-bold shadow-sm">
+        ✕
+      </button>
+
+      <!-- Modal Content -->
+      <div class="text-center mb-4">
+        <div class="text-4xl mb-1" id="modalEmoji">💌</div>
+        <span class="inline-block px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-bold" id="modalNumber">
+          Reason #1
+        </span>
+        <h4 class="font-fredoka font-bold text-xl sm:text-2xl text-pink-900 mt-2" id="modalTitle">
+          Sweet Title
+        </h4>
+      </div>
+
+      <div class="p-4 bg-white/80 rounded-2xl border border-pink-100 text-pink-800 font-medium text-sm sm:text-base leading-relaxed max-h-60 overflow-y-auto" id="modalBody">
+        Content here...
+      </div>
+
+      <div class="mt-6 flex justify-between items-center">
+        <button onclick="openRandomParagraph()" class="px-4 py-2 bg-pink-100 hover:bg-pink-200 text-pink-700 text-xs font-bold rounded-full transition flex items-center gap-1.5">
+          <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+          <span>Read Another</span>
+        </button>
+        <button onclick="closeSpotlightModal()" class="px-6 py-2 bg-gradient-to-r from-pink-400 to-rose-400 hover:from-pink-500 hover:to-rose-500 text-white text-xs font-bold rounded-full shadow transition">
+          I Love It! 💖
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT LOGIC: Data, Web Audio synth, Filters, Interactions -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // 100 Curated Sweet Paragraphs for Kenzie
+    const paragraphsData = [
+      { id: 1, category: "sweetness", emoji: "🌸", title: "Pure Morning Sunshine", text: "Kenzie, waking up knowing that you exist in this world makes every morning feel like a fresh spring day. Your heart is so purely kind that you turn mundane hours into bright, comforting moments of joy." },
+      { id: 2, category: "cuteness", emoji: "🎀", title: "The Adorable Crinkle Smile", text: "The way your face lights up when you smile is genuinely the most endearing thing in this universe. It’s like little stars dancing in your eyes, effortlessly bringing an instant smile to anyone nearby." },
+      { id: 3, category: "beauty", emoji: "🌷", title: "Effortless Grace", text: "You don't even have to try, Kenzie. Your natural grace, your gentle expressions, and the warmth you radiate whenever you walk into a room are more breathtaking than a garden in full bloom." },
+      { id: 4, category: "comfort", emoji: "🧸", title: "The Warmest Safe Haven", text: "Being around you feels like drinking warm hot chocolate wrapped in the softest fuzzy blanket while gentle rain falls outside. You provide an aura of safety, patience, and tender understanding." },
+      { id: 5, category: "sweetness", emoji: "🍯", title: "Sweeter Than Honey", text: "If sweetness could be bottled up, you would supply the entire galaxy forever. You treat people with genuine gentleness, never forgetting to offer kind words when they are needed most." },
+      { id: 6, category: "cuteness", emoji: "🍓", title: "Little Cheerful Giggle", text: "Your laugh is literal music, Kenzie. It sounds like tiny wind chimes on a breezy summer afternoon. It's so cute and contagious that sadness simply disappears the moment you chuckle." },
+      { id: 7, category: "beauty", emoji: "✨", title: "Starlight in Human Form", text: "There is an ethereal spark in you. You have eyes that hold galaxies of hope and wonder, reflecting beauty in the quietest, most subtle and sincere ways." },
+      { id: 8, category: "comfort", emoji: "☁️", title: "Soft as Pastel Clouds", text: "In a world that can be harsh and loud, your softness is your superpower, Kenzie. You never let bitterness harden you; you remain soft, welcoming, and endlessly compassionate." },
+      { id: 9, category: "sweetness", emoji: "🧁", title: "Heart of Gold and Vanilla", text: "Everything about you smells of sweet pastries and morning bakeries. Your thoughtful actions, whether sending a tiny text or just checking in, reveal how big and generous your heart truly is." },
+      { id: 10, category: "cuteness", emoji: "🐱", title: "Precious Little Mannerisms", text: "All your little quirks, the way you tuck your hair, the way you tilt your head when you're curious—each tiny habit is so unbearably cute it makes our hearts melt completely." },
+      
+      { id: 11, category: "beauty", emoji: "💎", title: "Irreplaceable Gem", text: "There are billions of people walking the earth, but not a single one carries the delicate radiance, gentle demeanor, and glowing brilliance that belongs only to Kenzie." },
+      { id: 12, category: "comfort", emoji: "🕯️", title: "A Guiding Candlelight", text: "Even on the dimmest days, your presence burns with a steady, peaceful flame that reminds everyone that things will be okay. You are a natural peacemaker and comforter." },
+      { id: 13, category: "sweetness", emoji: "💌", title: "Every Word a Love Note", text: "The way you speak to people is so encouraging. You always find the silver lining, the compliment someone needed to hear, and the gentle nod of approval that restores confidence." },
+      { id: 14, category: "cuteness", emoji: "🐾", title: "Playful Spirit", text: "You have that sweet, youthful spark of joy that finds delight in tiny flowers, cute animals, and goofy jokes. Never lose that adorable zest for life, Kenzie!" },
+      { id: 15, category: "beauty", emoji: "🌅", title: "Golden Hour Glow", text: "Golden hour was invented just to compliment your skin and your serene smile. You carry an internal golden warmth that never dims, even when the sky is gray." },
+      { id: 16, category: "comfort", emoji: "🍵", title: "Calm Chamomile Tea", text: "Just hearing your voice has an instantly grounding effect. It soothes restless thoughts and replaces anxiety with quiet assurance, like warm tea on a frosty evening." },
+      { id: 17, category: "sweetness", emoji: "🍭", title: "Pure Innocent Joy", text: "You celebrate the wins of others with such wholehearted delight. There isn’t an ounce of jealousy in your spirit; you genuinely want everyone to be happy and loved." },
+      { id: 18, category: "cuteness", emoji: "🐰", title: "Cuter Than a Bunny", text: "If cuteness was a competitive sport, Kenzie, you'd have taken home every single Olympic medal in history. It’s effortless, charming, and utterly delightful." },
+      { id: 19, category: "beauty", emoji: "🕊️", title: "Soul of Serenity", text: "Real beauty begins deep within the spirit, and yours is tranquil, honest, and loving. That inner radiance shines through your eyes and enchants everyone you meet." },
+      { id: 20, category: "comfort", emoji: "🏡", title: "Feeling Right at Home", text: "With you, nobody ever feels like an outsider. You have this magical gift of welcoming others into your circle, making them feel valued, recognized, and safe." },
+
+      { id: 21, category: "sweetness", emoji: "🍬", title: "Sweet Little Surprises", text: "You always remember the tiny details—the little preferences, favorite snacks, and old stories. That degree of attentive caring is rare and so deeply sweet." },
+      { id: 22, category: "cuteness", emoji: "🐥", title: "Innocent Wonder", text: "The way you look at cute things with that wide-eyed wonder makes everyone else pause and appreciate the world more deeply. Your perspective is a treasure." },
+      { id: 23, category: "beauty", emoji: "🌺", title: "Blooming Wildflower", text: "Wildflowers don’t compare themselves to roses; they just bloom boldly and bring color to open fields. That’s you, Kenzie—naturally stunning without any pretension." },
+      { id: 24, category: "comfort", emoji: "🧣", title: "Cozy Cashmere Scarf", text: "You wrap the people around you in unconditional acceptance. Whatever hardships they carry, spending ten minutes with Kenzie feels like dropping heavy weights." },
+      { id: 25, category: "sweetness", emoji: "🍫", title: "Rich In Empathy", text: "When someone is hurting, you feel it with them. You sit with people in their pain instead of brushing it aside. Your empathy is as deep and comforting as it gets." },
+      { id: 26, category: "cuteness", emoji: "🧁", title: "Frosting on the Cupcake", text: "Life is already good, but having you in it is like the swirl of rainbow buttercream and sparkle sprinkles on top that turns an ordinary day into a party." },
+      { id: 27, category: "beauty", emoji: "🌙", title: "Gentle Moonlight", text: "While the sun can be blinding, the moon is soft and illuminating. Kenzie, your beauty is like gentle moonlight—hypnotic, calming, and eternally mesmerizing." },
+      { id: 28, category: "comfort", emoji: "🍃", title: "A Refreshing Breeze", text: "When life gets suffocating, you arrive like a cool spring breeze rustling through green leaves, bringing clarity, fresh perspectives, and sweet calm." },
+      { id: 29, category: "sweetness", emoji: "🌼", title: "Cheerfulness In Full Sun", text: "Your optimism isn’t fake; it’s a courageous decision to search for the good in every circumstance. Being near you inspires everyone to look for blessings." },
+      { id: 30, category: "cuteness", emoji: "🎀", title: "Walking Cartoon Charm", text: "Sometimes you do things so inherently cute that it feels like you stepped out of a sweet anime or a studio Ghibli movie with your fluffy aesthetic and charm." },
+
+      { id: 31, category: "beauty", emoji: "🎨", title: "Masterpiece in Motion", text: "Every turn of your head, your laugh lines, the melody of your cadence—everything about you comes together like a priceless oil painting created with pure love." },
+      { id: 32, category: "comfort", emoji: "🕊️", title: "Tender Understanding", text: "You never jump to conclusions. You listen patiently before speaking, making anyone who confides in you feel deeply respected and understood." },
+      { id: 33, category: "sweetness", emoji: "🍓", title: "Sweetness That Endures", text: "Even when things get messy or difficult, you manage to preserve that core of warmth. You don’t return rudeness with venom; you neutralize it with honey." },
+      { id: 34, category: "cuteness", emoji: "🎈", title: "Bubbly Excitement", text: "Seeing you get genuinely excited over something you love is the most heart-soothing show on earth. You bounce with such uninhibited enthusiasm!" },
+      { id: 35, category: "beauty", emoji: "🫧", title: "Iridescent Bubble", text: "You have this glowing, floating, prismatic vibe that reflects every shade of joy. People can’t help but stare with wonder whenever you express yourself." },
+      { id: 36, category: "comfort", emoji: "🧦", title: "Fuzzy Socks by the Fire", text: "Your emotional presence warms up cold feet and weary hearts. You radiate the coziness of sitting next to a roaring hearth during winter snow." },
+      { id: 37, category: "sweetness", emoji: "🕊️", title: "Forgiving & Patient", text: "You don't hold grudges or keep scores. You offer second chances and understand human imperfections with unmatched maturity and tenderness." },
+      { id: 38, category: "cuteness", emoji: "🧸", title: "Snuggle Champion", text: "You just look like you were sculpted out of marshmallow fluff and hugs. It is physically impossible to see Kenzie and not want to give her the biggest hug!" },
+      { id: 39, category: "beauty", emoji: "🌷", title: "A Petal in the Wind", text: "There is an exquisite lightness to how you move through life. You don't stomp with arrogance; you tread with reverence and poetic sweetness." },
+      { id: 40, category: "comfort", emoji: "🌾", title: "Quiet Mountain Meadow", text: "In your presence, background noises fade away and peace takes over. You are that tranquil pasture where tired souls can finally rest." },
+
+      { id: 41, category: "sweetness", emoji: "🍰", title: "Never Forgets a Birthday", text: "You remember to check on people just because. That innate impulse to care without expecting rewards is what puts you in a league of your own." },
+      { id: 42, category: "cuteness", emoji: "🍭", title: "Sugar-Coated Giggles", text: "Whenever you try to suppress a giggle and it bursts out anyway, that snort or squeak is the sweetest sound recorded in human history." },
+      { id: 43, category: "beauty", emoji: "🪞", title: "True Reflection of Light", text: "Mirrors can only capture your external features, which are gorgeous, but they can’t even begin to capture the radiant spirit dancing behind your eyes." },
+      { id: 44, category: "comfort", emoji: "🕯️", title: "Unshakable Loyalty", text: "When Kenzie loves you, you know you are loved for real. You stand by people through storms and quiet seasons alike with unfaltering warmth." },
+      { id: 45, category: "sweetness", emoji: "🧁", title: "Little Acts of Kindness", text: "Whether it’s leaving a cute note, holding a door, or simply sharing a sincere smile, your daily life is paved with countless little kindnesses." },
+      { id: 46, category: "cuteness", emoji: "🎀", title: "Flawless Bow Vibe", text: "You bring ribbons and bows to life! Everything looks 1000% cuter when you wear it or touch it. You turn normal objects into adorable treasures." },
+      { id: 47, category: "beauty", emoji: "🌈", title: "Rainbow After the Rain", text: "You show up right when skies are dark, reminding people that beauty and colors always return. You are that promise of brighter horizons." },
+      { id: 48, category: "comfort", emoji: "🫖", title: "Soothing Evening Cup", text: "Talks with Kenzie feel like steeping in pure comfort. Time dissolves, stress evaporates, and laughter naturally takes over." },
+      { id: 49, category: "sweetness", emoji: "🌸", title: "Gentle Words Only", text: "You choose words that heal rather than hurt. You use speech as an instrument to lift spirits, build up dreams, and heal bruised hearts." },
+      { id: 50, category: "cuteness", emoji: "🐣", title: "Cute Pout Moments", text: "Even when you act a little sassy or pout playfully, it is so ridiculously charming that it's impossible to take seriously—it just makes us smile more!" },
+
+      { id: 51, category: "beauty", emoji: "✨", title: "Sparkling Curiosity", text: "The curiosity in your heart gives your eyes a constant glimmer. You are interested in learning, growing, and experiencing the wonders of the world." },
+      { id: 52, category: "comfort", emoji: "☁️", title: "Feather Pillow Softness", text: "You give people room to be imperfect without judgment. You are a soft landing spot when people stumble, never kicking them while they’re down." },
+      { id: 53, category: "sweetness", emoji: "🍩", title: "Sprinkled With Magic", text: "Everything Kenzie touches gets sprinkled with a dusting of joy and goodness. You make holidays brighter, birthdays sweeter, and weekdays cozy." },
+      { id: 54, category: "cuteness", emoji: "🐰", title: "Adorable Energy", text: "You have that infectious, sweet bunny energy—always moving with a lighthearted bounce, brightening whatever room you happen to grace." },
+      { id: 55, category: "beauty", emoji: "🌹", title: "Timeless Elegance", text: "Trends come and go, but the classic elegance and wholesome beauty you carry will forever remain timeless and celebrated by everyone who knows you." },
+      { id: 56, category: "comfort", emoji: "🧸", title: "The Best Confidante", text: "Secrets and worries are always safe with you. You protect the vulnerabilities of your friends like precious gems in an impenetrable vault." },
+      { id: 57, category: "sweetness", emoji: "🍯", title: "Naturally Uplifting", text: "Just hearing your voice or getting a short text from you is enough to flip a terrible day into a peaceful, hopeful one." },
+      { id: 58, category: "cuteness", emoji: "🍓", title: "Strawberry Sweet Tooth", text: "You have this cute affection for delicious little treats and sweet things that matches your personality so flawlessly." },
+      { id: 59, category: "beauty", emoji: "💫", title: "Shooting Star Wonder", text: "Finding someone like you is rarer than spotting a shooting star over a crystal clear lake. You are a wish that came true in human form." },
+      { id: 60, category: "comfort", emoji: "🕯️", title: "Unfailing Gentleness", text: "You treat fragile emotions with exquisite care. You know how easily hearts can bruise, and you handle people with the softest silk gloves." },
+
+      { id: 61, category: "sweetness", emoji: "💌", title: "Living Thank-You Note", text: "You express gratitude for the smallest favors. You never take anyone for granted, and that grateful spirit keeps your heart forever glowing." },
+      { id: 62, category: "cuteness", emoji: "🐾", title: "Animal Lover Heart", text: "The way you talk to furry creatures and soften up around pets reveals how pure and loving your inner child remains." },
+      { id: 63, category: "beauty", emoji: "🌺", title: "Exquisite Smile Lines", text: "Your smile isn’t just surface deep; it reaches your eyes, lights up your cheeks, and illuminates the entire room in vibrant color." },
+      { id: 64, category: "comfort", emoji: "🏡", title: "No Masks Required", text: "Around Kenzie, anyone can let their guard down. No pretense, no performance—just pure, honest, unconditional acceptance." },
+      { id: 65, category: "sweetness", emoji: "🍬", title: "Patient Teacher", text: "When someone doesn't understand, you explain with patience and kindness instead of condescension. You make learning safe and sweet." },
+      { id: 66, category: "cuteness", emoji: "🐥", title: "Cute Sleepy Vibes", text: "When you are cozy and sleepy, wrapped up in huge blankets, you look like a tiny slumbering angel that needs to be protected at all costs." },
+      { id: 67, category: "beauty", emoji: "💎", title: "Unfiltered Authenticity", text: "You don’t pretend to be someone else to please the crowd. Your authentic self is already so mesmerizing that no imitation could compare." },
+      { id: 68, category: "comfort", emoji: "🍵", title: "Quiet Companionship", text: "You don't need constant talking to create closeness. Even shared silence with Kenzie is tranquil, comforting, and deeply rejuvenating." },
+      { id: 69, category: "sweetness", emoji: "🧁", title: "Cheering From the Front Row", text: "You are everyone's biggest fan. Whenever your friends do something they are proud of, you celebrate them with loudest cheers and widest smiles." },
+      { id: 70, category: "cuteness", emoji: "🎀", title: "Adorable Dance Steps", text: "Those spontaneous little happy dances you do when tasty food arrives or good news drops are peak cuteness!" },
+
+      { id: 71, category: "beauty", emoji: "🌙", title: "Luminous Soul", text: "You have a soul that glistens. People are naturally drawn to your orbit because light simply emanates from your thoughts and deeds." },
+      { id: 72, category: "comfort", emoji: "🧣", title: "Deep Listening Ears", text: "When someone speaks to you, you don't wait for your turn to talk. You truly listen with undivided attention and an open heart." },
+      { id: 73, category: "sweetness", emoji: "🌸", title: "Heart Blooming with Kindness", text: "You naturally look for excuses to be kind. If there's an opportunity to bring someone a flower, a coffee, or a compliment, you seize it." },
+      { id: 74, category: "cuteness", emoji: "🧸", title: "Cute Warm Squeeze", text: "Hugging Kenzie is like holding pure happiness. It resets tired souls and fills hearts with cozy reassurance." },
+      { id: 75, category: "beauty", emoji: "🌷", title: "Petals of Grace", text: "You handle disagreements with dignity and kindness. You don't scream or demean; you hold yourself with poise and graceful understanding." },
+      { id: 76, category: "comfort", emoji: "🍃", title: "Gentle Morning Rain", text: "Like a soft rain washing away summer dust, your comforting words wash away heavy worries and bring back tranquility." },
+      { id: 77, category: "sweetness", emoji: "🍓", title: "Delicious Positivity", text: "Your positivity isn't toxic or dismissive; it's grounded in hope, love, and a profound belief that better days are always coming." },
+      { id: 78, category: "cuteness", emoji: "🍭", title: "Sugar Plum Royalty", text: "If there were a fairy kingdom of sweets, Kenzie would be crowned sovereign ruler, reigning with bows, cotton candy, and pure joy." },
+      { id: 79, category: "beauty", emoji: "🌅", title: "Dawn of Tomorrow", text: "You bring the feeling of a new beginning wherever you go. Your optimism washes away yesterday's regrets and welcomes tomorrow's joys." },
+      { id: 80, category: "comfort", emoji: "🧦", title: "No Judgment Zone", text: "Whatever silly thoughts or fears someone has, they can tell you without fear of being mocked. You are the ultimate safe space." },
+
+      { id: 81, category: "sweetness", emoji: "🕊️", title: "Gentle Spirit", text: "You don't fight for dominance; your quiet strength and genuine humility command deeper love and respect than loud voices ever could." },
+      { id: 82, category: "cuteness", emoji: "🎈", title: "Childlike Delight", text: "You never lost that cute, delightful ability to look at balloons, glitter, or snow and feel genuine tingling happiness." },
+      { id: 83, category: "beauty", emoji: "✨", title: "Unforgettable Gaze", text: "When you look into someone's eyes, you see the real them. That depth of vision makes your gaze unforgettable and deeply moving." },
+      { id: 84, category: "comfort", emoji: "🕯️", title: "A Harbor in the Storm", text: "When life gets turbulent, you are that safe marina where ships drop anchor and weather the tempest in peaceful waters." },
+      { id: 85, category: "sweetness", emoji: "🍰", title: "Sweet Encourager", text: "You believe in people before they even believe in themselves. Your words have given wings to timid dreams and quiet hearts." },
+      { id: 86, category: "cuteness", emoji: "🐱", title: "Kitty-Cat Charm", text: "Curled up with a book or watching your favorite shows, you exude that cute, cozy feline charm that everyone adores." },
+      { id: 87, category: "beauty", emoji: "🌹", title: "A Rose Without Thorns", text: "People often say roses must have thorns, but your beauty is gentle and non-threatening. You offer blossoms without cutting anyone." },
+      { id: 88, category: "comfort", emoji: "☁️", title: "Soft Hug For The Soul", text: "Even when miles apart, thinking about you feels like an invisible warm hug wrapped securely around the heart." },
+      { id: 89, category: "sweetness", emoji: "💌", title: "Thoughtful Messages", text: "Those sweet out-of-the-blue messages you send: 'Hope you have a sweet day!'—they literally rescue people from dark afternoons." },
+      { id: 90, category: "cuteness", emoji: "🎀", title: "Perfection in Pink", text: "You embody all the lovely feelings of blush pink, soft lavender, and fresh strawberries. It’s impossible not to swoon!" },
+
+      { id: 91, category: "beauty", emoji: "💫", title: "A Celestial Gift", text: "You were crafted with celestial care. Every atom in you sings of harmony, elegance, and irresistible sweetness." },
+      { id: 92, category: "comfort", emoji: "🍵", title: "Calming Assurance", text: "When everything feels confusing, talking to Kenzie simplifies the world. You cut through nonsense with gentle clarity and calm." },
+      { id: 93, category: "sweetness", emoji: "🍯", title: "Sweet Memory Maker", text: "Every memory made with Kenzie becomes a golden souvenir stored in the heart's keepsake box to be smiled at for decades." },
+      { id: 94, category: "cuteness", emoji: "🐥", title: "Little Peep of Joy", text: "The silly cute nicknames, playful teasing, and cheerful banter you bring into everyday chats make life infinitely more fun." },
+      { id: 95, category: "beauty", emoji: "🌺", title: "Everlasting Blossom", text: "Your beauty will never fade because its roots are watered by goodness, truth, and love—things that only grow richer with time." },
+      { id: 96, category: "comfort", emoji: "🌾", title: "Safe to Be Vulnerable", text: "Crying around you doesn't feel embarrassing; it feels healing, because you offer compassion instead of judgment." },
+      { id: 97, category: "sweetness", emoji: "🍫", title: "A Heart of Pure Gold", text: "If we took all the kindness, laughter, and sweetness in the universe and molded it into a person, we’d get our sweet Kenzie." },
+      { id: 98, category: "cuteness", emoji: "🐰", title: "The World's Prettiest Bunny", text: "No character in any fairy tale or children's book could ever match the adorable, sweet, and cute charisma you carry effortlessly." },
+      { id: 99, category: "beauty", emoji: "✨", title: "A Radiant Masterpiece", text: "You are poetry written in light. You are music composed in smiles. You are a masterpiece that this world is lucky to witness every day." },
+      { id: 100, category: "sweetness", emoji: "💖", title: "Infinite & Eternal Love", text: "Reason one hundred is simple: You are Kenzie. Just being yourself is enough to make the universe infinitely sweeter, cuter, and more beautiful. You are loved beyond words, today, tomorrow, and for all time!" }
+    ];
+
+    // Current filter and view mode
+    let currentFilter = 'all';
+    let currentView = 'grid'; // 'grid' or 'list'
+
+    // Render Paragraphs
+    function renderParagraphs(items) {
+      const grid = document.getElementById('paragraphsGrid');
+      grid.innerHTML = '';
+
+      if (items.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-12 glass-card rounded-3xl p-6">
+            <div class="text-4xl mb-2">🌸</div>
+            <p class="font-fredoka text-lg text-pink-700">No sweet paragraph matches that exact search...</p>
+            <p class="text-xs text-pink-500 mt-1">Try searching for words like 'smile', 'love', 'kind', or 'cute'!</p>
+          </div>
+        `;
+        document.getElementById('resultsCount').innerText = `Showing 0 of 100 sweet reasons`;
+        return;
+      }
+
+      document.getElementById('resultsCount').innerText = `Showing ${items.length} of 100 sweet reasons`;
+
+      items.forEach(p => {
+        const card = document.createElement('div');
+        
+        if (currentView === 'grid') {
+          card.className = "glass-card glass-card-hover rounded-3xl p-6 flex flex-col justify-between border-2 border-pink-100 relative group";
+          card.innerHTML = `
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-3xl filter drop-shadow-sm group-hover:scale-125 transition-transform duration-300">${p.emoji}</span>
+                <span class="text-[11px] font-fredoka font-bold px-2.5 py-1 bg-pink-100 text-pink-600 rounded-full border border-pink-200">
+                  #${p.id}
+                </span>
+              </div>
+              <h3 class="font-fredoka font-bold text-lg text-pink-900 mb-2 leading-snug group-hover:text-pink-600 transition-colors">
+                ${p.title}
+              </h3>
+              <p class="text-pink-800/90 text-sm leading-relaxed font-quicksand font-medium">
+                ${p.text}
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-pink-200/50 flex items-center justify-between">
+              <span class="text-[10px] uppercase font-bold text-pink-400 tracking-wider">#${p.category}</span>
+              <button onclick="spotlightItem(${p.id}); burstSparklesAt(event)" class="text-xs text-pink-500 hover:text-pink-700 font-bold flex items-center gap-1">
+                <span>Enlarge</span>
+                <i data-lucide="expand" class="w-3 h-3"></i>
+              </button>
+            </div>
+          `;
+        } else {
+          // List View
+          card.className = "glass-card rounded-2xl p-4 flex items-start gap-4 border border-pink-200 col-span-full hover:border-pink-300 transition";
+          card.innerHTML = `
+            <div class="text-3xl flex-shrink-0 pt-1">${p.emoji}</div>
+            <div class="flex-grow">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-xs font-bold text-pink-500 bg-pink-100 px-2 py-0.5 rounded-full">#${p.id}</span>
+                <h4 class="font-fredoka font-bold text-base text-pink-900">${p.title}</h4>
+              </div>
+              <p class="text-xs sm:text-sm text-pink-800 font-medium">${p.text}</p>
+            </div>
+            <button onclick="spotlightItem(${p.id}); burstSparklesAt(event)" class="text-xs text-pink-500 hover:text-pink-700 font-bold self-center px-2 py-1 bg-pink-50 rounded-lg">
+              ✨ Read
+            </button>
+          `;
+        }
+
+        grid.appendChild(card);
+      });
+
+      lucide.createIcons();
+    }
+
+    // Filter by Category
+    function setFilter(category, btnElement) {
+      currentFilter = category;
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('bg-pink-500', 'text-white');
+        btn.classList.add('bg-white', 'text-pink-700');
+      });
+      if (btnElement) {
+        btnElement.classList.add('bg-pink-500', 'text-white');
+        btnElement.classList.remove('bg-white', 'text-pink-700');
+      }
+      filterParagraphs();
+      playChime(600);
+    }
+
+    // Search and Category Combined Filter
+    function filterParagraphs() {
+      const query = document.getElementById('paragraphSearch').value.toLowerCase().trim();
+      const filtered = paragraphsData.filter(item => {
+        const matchesCategory = (currentFilter === 'all') || (item.category === currentFilter);
+        const matchesSearch = item.title.toLowerCase().includes(query) || item.text.toLowerCase().includes(query);
+        return matchesCategory && matchesSearch;
+      });
+      renderParagraphs(filtered);
+    }
+
+    // Toggle between Grid and List view
+    function toggleView(mode) {
+      currentView = mode;
+      const gridBtn = document.getElementById('viewGridBtn');
+      const listBtn = document.getElementById('viewListBtn');
+
+      if (mode === 'grid') {
+        gridBtn.className = "p-1.5 rounded-full bg-pink-400 text-white transition";
+        listBtn.className = "p-1.5 rounded-full text-pink-600 hover:bg-pink-100 transition";
+      } else {
+        listBtn.className = "p-1.5 rounded-full bg-pink-400 text-white transition";
+        gridBtn.className = "p-1.5 rounded-full text-pink-600 hover:bg-pink-100 transition";
+      }
+      filterParagraphs();
+      playChime(550);
+    }
+
+    // Modal Spotlight
+    function spotlightItem(id) {
+      const item = paragraphsData.find(p => p.id === id);
+      if (!item) return;
+
+      document.getElementById('modalEmoji').innerText = item.emoji;
+      document.getElementById('modalNumber').innerText = `Reason #${item.id} of 100`;
+      document.getElementById('modalTitle').innerText = item.title;
+      document.getElementById('modalBody').innerText = item.text;
+
+      const modal = document.getElementById('spotlightModal');
+      modal.classList.remove('hidden');
+    }
+
+    function closeSpotlightModal() {
+      document.getElementById('spotlightModal').classList.add('hidden');
+      playChime(440);
+    }
+
+    function openRandomParagraph() {
+      const randomIndex = Math.floor(Math.random() * paragraphsData.length);
+      const chosen = paragraphsData[randomIndex];
+      spotlightItem(chosen.id);
+      playChime(880);
+      confetti({
+        particleCount: 40,
+        spread: 60,
+        origin: { y: 0.6 }
+      });
+    }
+
+    // Compliment Generator
+    const sweetCompliments = [
+      "Kenzie, your smile could melt any winter ice storm into warm sunshine!",
+      "You are proof that pure kindness is the most beautiful thing a person can wear.",
+      "Just hearing your laughter gives everyone a full dose of serotonin!",
+      "If hugging you was an Olympic sport, it would break world peace records.",
+      "Your gentle heart is an absolute gift to everyone fortunate enough to know you.",
+      "Kenzie, you turn normal grey moments into sparkling strawberry memories!",
+      "You possess that rare, natural grace that makes people feel instantly safe around you.",
+      "You are genuinely sweeter than chocolate cake topped with warm berries and cream!"
+    ];
+
+    function generateCuteCompliment() {
+      const display = document.getElementById('complimentDisplay');
+      const randomIndex = Math.floor(Math.random() * sweetCompliments.length);
+      display.style.opacity = '0';
+      playChime(698.46);
+      setTimeout(() => {
+        display.innerText = `"${sweetCompliments[randomIndex]}"`;
+        display.style.opacity = '1';
+      }, 200);
+      confetti({
+        particleCount: 25,
+        spread: 50,
+        origin: { y: 0.4 }
+      });
+    }
+
+    // Jar of Sweet Notes
+    const jarLoveNotes = [
+      "🍓 'Kenzie: Sweet as strawberries, precious as diamonds!'",
+      "🎀 'A gentle reminder: You are loved infinitely today!'",
+      "🌸 'You make the universe a ten times softer place.'",
+      "🧸 'Sending you 1,000 warm, fluffy virtual bear hugs right now!'",
+      "🧁 'You bring sprinkle energy everywhere you go!'",
+      "✨ 'Keep shining your gorgeous radiant light, sweet girl!'"
+    ];
+
+    function pickCandyHeart() {
+      const note = jarLoveNotes[Math.floor(Math.random() * jarLoveNotes.length)];
+      playChime(784);
+      confetti({
+        particleCount: 50,
+        spread: 70,
+        origin: { y: 0.55 },
+        colors: ['#ffb7d5', '#ff6ea7', '#e8deff', '#ffd6ba']
+      });
+
+      // Display prompt
+      const modal = document.getElementById('spotlightModal');
+      document.getElementById('modalEmoji').innerText = "🍬";
+      document.getElementById('modalNumber').innerText = "Special Candy Heart Note";
+      document.getElementById('modalTitle').innerText = "Straight from the Candy Jar!";
+      document.getElementById('modalBody').innerText = note;
+      modal.classList.remove('hidden');
+    }
+
+    // Confetti and Heart Burst on demand
+    function burstHearts(e) {
+      playChime(659.25);
+      confetti({
+        particleCount: 70,
+        spread: 80,
+        origin: { y: 0.2 },
+        shapes: ['circle'],
+        colors: ['#ff6ea7', '#ffb7d5', '#ffd1dc', '#fff']
+      });
+    }
+
+    function burstSparklesAt(e) {
+      if (!e) return;
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      confetti({
+        particleCount: 25,
+        spread: 45,
+        origin: { x, y }
+      });
+    }
+
+    // Web Audio API Synthesizer (Cute chimes and sweet lullaby player)
+    let audioCtx = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function playChime(freq = 523.25) {
+      try {
+        initAudio();
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+        // Soft bell-like envelope
+        gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.2, audioCtx.currentTime + 0.05);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.2);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + 1.25);
+      } catch (err) {
+        // Fallback gracefully if audio is blocked
+      }
+    }
+
+    // Sweet Lullaby Melodic Sequence Generator
+    let isPlayingMusic = false;
+    let musicInterval = null;
+    const sweetMelody = [
+      523.25, 587.33, 659.25, 783.99, 880.00, 783.99, 659.25, 587.33,
+      523.25, 659.25, 783.99, 1046.50, 880.00, 783.99, 659.25
+    ];
+    let noteIndex = 0;
+
+    function toggleCuteMusic() {
+      initAudio();
+      isPlayingMusic = !isPlayingMusic;
+      const label = document.getElementById('musicBtnLabel');
+      const icon = document.getElementById('musicIcon');
+
+      if (isPlayingMusic) {
+        label.innerText = 'Pause Melody';
+        icon.classList.add('animate-spin');
+        musicInterval = setInterval(() => {
+          playChime(sweetMelody[noteIndex]);
+          noteIndex = (noteIndex + 1) % sweetMelody.length;
+        }, 600);
+      } else {
+        label.innerText = 'Play Lullaby';
+        icon.classList.remove('animate-spin');
+        clearInterval(musicInterval);
+      }
+    }
+
+    // Sparkle trail cursor effect
+    window.addEventListener('mousemove', (e) => {
+      if (Math.random() > 0.45) return; // rate limit for smooth performance
+      const dot = document.createElement('div');
+      dot.className = 'sparkle-dot';
+      dot.style.left = `${e.clientX}px`;
+      dot.style.top = `${e.clientY}px`;
+      const emojis = ['✨', '💖', '🌸', '⭐', '🍓'];
+      if (Math.random() > 0.75) {
+        dot.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+        dot.style.fontSize = '12px';
+        dot.style.background = 'transparent';
+        dot.style.boxShadow = 'none';
+      }
+      document.body.appendChild(dot);
+      setTimeout(() => dot.remove(), 700);
+    });
+
+    // Sticker Board Interaction
+    let stickerCount = 0;
+    const stickerPool = ['💖', '🎀', '🍓', '🍰', '🧸', '🌸', '✨', '🧁', '🌷', '🐥', '⭐', '🍭', '🤍'];
+
+    function stampSticker(e) {
+      const board = document.getElementById('stickerBoard');
+      const rect = board.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      // Hide placeholder if first stamp
+      const prompt = document.getElementById('emptyBoardPrompt');
+      if (prompt) prompt.style.display = 'none';
+
+      const sticker = document.createElement('div');
+      const randomIcon = stickerPool[Math.floor(Math.random() * stickerPool.length)];
+      const rotation = (Math.random() * 40 - 20).toFixed(0);
+      const scale = (0.9 + Math.random() * 0.4).toFixed(2);
+
+      sticker.className = 'absolute select-none pointer-events-auto transform -translate-x-1/2 -translate-y-1/2 transition-transform hover:scale-125 cursor-pointer';
+      sticker.style.left = `${x}px`;
+      sticker.style.top = `${y}px`;
+      sticker.style.fontSize = '2.2rem';
+      sticker.style.transform = `translate(-50%, -50%) rotate(${rotation}deg) scale(${scale})`;
+      sticker.innerText = randomIcon;
+
+      // Click to wiggle/react
+      sticker.onclick = (stkEvent) => {
+        stkEvent.stopPropagation();
+        playChime(900);
+        sticker.style.transform = `translate(-50%, -50%) scale(1.4) rotate(0deg)`;
+        setTimeout(() => {
+          sticker.style.transform = `translate(-50%, -50%) rotate(${rotation}deg) scale(${scale})`;
+        }, 200);
+      };
+
+      board.appendChild(sticker);
+      stickerCount++;
+      document.getElementById('stickerCountText').innerText = `Stickers stamped: ${stickerCount}`;
+      playChime(650 + Math.random() * 200);
+    }
+
+    function clearStickers() {
+      const board = document.getElementById('stickerBoard');
+      board.innerHTML = `
+        <div id="emptyBoardPrompt" class="text-pink-300 font-fredoka text-sm sm:text-base pointer-events-none">
+          ✨ Tap or Click Anywhere Inside to Leave a Sweet Sticker for Kenzie! ✨
+        </div>
+      `;
+      stickerCount = 0;
+      document.getElementById('stickerCountText').innerText = `Stickers stamped: 0`;
+      playChime(400);
+    }
+
+    // Initialize display on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderParagraphs(paragraphsData);
+    });
+  </script>
+</body>
+</html>
